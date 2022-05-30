@@ -1,20 +1,68 @@
-// let footer = document.querySelector('footer');
-// footer.addEventListener('click',wordAppear);
-
-// function wordAppear() {
-//  console.log(document.innerHTML = 'Clique');
-// }
-
-// footer.onclick = wordAppear;
+// Function 1
 
 let footer = document.querySelector('footer');
-footer.addEventListener('click',wordAppear);
+let i = 0;
 
-function wordAppear() {
-  for(i > 0; ; i++);{
-    console.log(document.innerHTML = 'Clique');
+footer.addEventListener('click', function () {
+  i++;
+  console.log(document.innerHTML = `Clique ${i}`);
+});
 
+//_______________________
+
+// Function 2
+
+let navBar = document.getElementById('navbarHeader');
+let menuChange = document.getElementsByClassName('navbar-toggler');
+
+
+menuChange[0].addEventListener('click', function () {
+  navBar.classList.toggle("collapse")
+});
+
+//_______________________
+
+// Function 3
+let card = document.getElementsByClassName('col-md-4');
+let cardOneEdit = card[0].querySelectorAll("button");
+
+cardOneEdit[1].addEventListener('click', function () {
+  card[0].style = "color: red"
+});
+
+//_______________________
+
+// Function 4
+let cardTwoEdit = card[1].querySelectorAll("button");
+let cardTwoEditStatus = false;
+
+cardTwoEdit[1].addEventListener('click', function () {
+  if (cardTwoEditStatus === false) {
+    card[1].style = 'color: green';
+    cardTwoEditStatus = true;
+  } else if (cardTwoEditStatus === true) {
+    card[1].style = 'color: black';
+    cardTwoEditStatus = false;
   }
-}
+});
 
-footer.onclick = wordAppear;
+//_______________________
+
+// Function 5
+
+let navbarSelected = document.getElementsByClassName("navbar");
+x = false
+
+navbarSelected[0].addEventListener('dblclick', function () {
+  if (x === false) {
+    for (i = 0; i < document.styleSheets.length; i++) {
+      void (document.styleSheets.item(i).disabled = true);
+    }
+    x = true;
+  } else if (x === true) {
+    for (i = 0; i < document.styleSheets.length; i++) {
+      void (document.styleSheets.item(i).disabled = false);
+    }
+    x = false;
+  }
+});
