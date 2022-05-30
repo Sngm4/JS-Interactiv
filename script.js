@@ -66,3 +66,23 @@ navbarSelected[0].addEventListener('dblclick', function () {
     x = false;
   }
 });
+
+//_______________________
+
+// Function 6
+
+let cardList = document.querySelectorAll('.card');
+
+cardList.forEach((item) => {
+  item.addEventListener('mouseenter', function () {
+    item.querySelector(".card-text").classList.toggle("collapse");
+    let itemImage = item.querySelector('img');
+    if (itemImage.style.width === '20%') {
+      itemImage.style = "width: 100%";
+    } else {
+      itemImage.style = "width: 20%";
+    }
+  });
+});
+
+//_______________________
